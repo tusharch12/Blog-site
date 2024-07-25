@@ -1,0 +1,32 @@
+{% load static %}
+<DOCTYPE! html>
+<html>
+    <head>
+        {% block title%}
+         <title>Multipi-Blog</title>
+        {% endblock %}
+        {% block css %}
+       <link rel="stylesheet" href="{% static 'base.css' %}">
+       {% endblock %}
+        <head>
+    
+    <body style="margin: 0;">
+        <nav style ="    display: flex;
+    background: linear-gradient(90.17deg, #ffffffff 0%, #526576 60%, #1e2327 100%);
+    justify-content: center;
+    align-items: center;
+    height: 5rem;">
+
+         <!-- <img src ="https://multilipi.blob.core.windows.net/static/files/image.png" /> -->
+
+         
+
+        </nav>
+
+            {% block content %}
+
+            {% endblock %}
+
+       
+    </body>        
+    </html>
