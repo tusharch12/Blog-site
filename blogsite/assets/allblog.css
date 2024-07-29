@@ -1,8 +1,8 @@
 .post-item{
     display: inline-block;
-    width: 500px;
+    width: 350px;
     border:2px solid black;
-    height:430px;
+    height:300px;
     padding: 10px;
     margin: 20px;
     overflow: hidden;   /* flex-direction: column; */
@@ -10,11 +10,9 @@
 .font-color{
     color: black;
 }
-
 .btn:hover{
     color: hsl(350, 74%, 58%);
 }
-
 .decoration{
     text-decoration : none;
 }
@@ -26,7 +24,7 @@
     margin-bottom:10px ;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
+
     height: 10%;
     width: 150px;
     background-color: #3087e4;
@@ -36,17 +34,11 @@
     display: flex;
     text-align: start;
     align-items: center;
-    font-size: 25px;
-    height: 15%;
+    font-size: 20px;
+    height: 15%;    
+    width: 100%;
 
 }
-
-body{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-
 
  
 
@@ -63,6 +55,10 @@ ul{
     height: 100% ;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+#blog-img{
+    height: 70%;
 }
 
 
