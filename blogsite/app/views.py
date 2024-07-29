@@ -1,17 +1,41 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView,DetailView, CreateView
-from .models import Post
+from .models import Post, BlogComment
 from . import forms
 
 
-class HomeView(ListView):
-    model = Post 
-    template_name = "allblog.html"
+def home(request):    
+    posts = Post.objects.filter(is_draft=False)
+    context = {"posts":posts} 
+    return render(request,'allblog.html',context)
 
-class DetailArticle(DetailView):
-    model= Post 
-    template_name = "detailarticle.html"
+
+def detailBlog(request,pk):
+    print('detail me aaya')
+    post = Post.objects.get(pk=pk)  
+    if request.method == 'POST':
+        print('detail ke comment')
+        name= request.POST['name']
+        email = request.POST['email']
+        comment = request.POST['comment']
+        blogobj, created = BlogComment.objects.get_or_create(name=name,email=email,comment=comment,blog=post) 
+
+    context = {
+        "post":post 
+    }
+    return render(request,'detailarticle.html',context)  
+
+
+        
+
+# class DetailArticle(DetailView):
+#     model= Post 
+#     template_name = "detailarticle.html"
+
+
+    
+            
 
 def addpost(request):
 
