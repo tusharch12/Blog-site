@@ -1,32 +1,413 @@
 {% load static %}
-<DOCTYPE! html>
-<html>
-    <head>
-        {% block title%}
-         <title>Multipi-Blog</title>
-        {% endblock %}
-        {% block css %}
-       <link rel="stylesheet" href="{% static 'base.css' %}">
-       {% endblock %}
-        <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MultiLipi{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static "files/img-7.png" %}" />
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+    <link rel="stylesheet" href="{% static "animation.css" %}" />
+    <link rel="stylesheet" href="{% static "output.css" %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    {% block css %}
+    {% endblock %}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <script
+        src="https://kit.fontawesome.com/5482c79e6d.js"
+        crossorigin="anonymous"
+    ></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script> -->
+    <link href="https://multilipi.com" hreflang="en" rel="alternate">
+
+    <link href="https://hi.multilipi.com" hreflang="hi" rel="alternate">
     
-    <body style="margin: 0;">
-        <nav style ="    display: flex;
-    background: linear-gradient(90.17deg, #ffffffff 0%, #526576 60%, #1e2327 100%);
-    justify-content: center;
-    align-items: center;
-    height: 5rem;">
+    <link href="https://gu.multilipi.com" hreflang="gu" rel="alternate">
+    
+    <link href="https://pa.multilipi.com" hreflang="pa" rel="alternate">
+    
+    <link href="https://bn.multilipi.com" hreflang="bn" rel="alternate">
+    
+    <script src="https://scripttranslate.blob.core.windows.net/test/multilipi_script.js" data-pos-x="50" data-pos-y="50"  
+    key="b955a4fc-da0e-43db-aab0-8096a9e754d8" 
+    crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <style>
+        br{
+          margin: 10px 0;
+        }
 
-         <!-- <img src ="https://multilipi.blob.core.windows.net/static/files/image.png" /> -->
+        .login-btn-trans {
+          text-decoration: none;
+          text-transform: none;
+          padding: 8px 20px;
+          border-radius: 8px;
+          transition: 0.3s;
+          color: white;
+        }
+        .login-btn-trans:hover {
+          color: rgb(59 130 246);
+          /* background-color: #00000088; */
+        }
+        .try-btn-trans {
+          text-decoration: none;
+          text-transform: none;
+          background-color: #48aef3ff;
+          padding: 8px 20px;
+          border-radius: 8px;
+          transition: 0.3s;
+        }
+        .try-btn-trans:hover {
+          background-color: rgb(59 130 246);
+        }
+          
+    </style>
+    <style> /* main front */
+      .main-front-outerdiv {
+        /* background-image: url("imgs/doc_bg.png"); */
+        position: relative;
+        overflow: hidden;
+        height: fit-content;
+        padding: 160px 50px 80px 80px;
+        /* background-size: cover; */
+      }
+      .main-front-bg {
+        opacity: 0.2;
+        z-index: -100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+      }
+      .main-front-innerdiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .main-front-para {
+        color: white;
+        max-width: 750px;
+        font-size: 30px;
+        margin: 20px 0;
+      }
+      .gradint-text {
+        font-size: calc(60 * var(--ratio));
+        font-family: Inter;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: none;
+        line-height: normal;
+        background: linear-gradient(
+          91.18deg,
+          #d8d5d199 0%,
+          #f1f0eeff 30%,
+          #f1f0eeff 69%,
+          #d8d5d199 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .heading-blueis {
+        font-size: calc(58 * var(--ratio));
+        font-family: Inter;
+        font-weight: 600;
+        color: #1a9fe2ff;
+      }
+      .main-front-btndiv {
+        margin-left: auto;
+        margin-right: 25px;
+        display: flex;
+        gap: 20px;
+        font-family: Inter;
+        font-weight: 700;
+      }
+      .main-front-btn {
+        text-align: center;
+        display: inline-block;
+        width: fit-content;
+        padding: 8px 25px 10px;
+        margin-right: 40px;
+        margin-top: 40px;
+        font-size: 27px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        background-color: #48aef3ff;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+    
+      .main-front-btn:hover {
+        background-color: rgb(59 130 246);
+      }
+    
+      .white_line {
+        height: 0;
+        display: block;
+        width: 80%;
+        margin: 50px 0;
+        border: 1px white solid;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #202020dd;
+        width: max-content;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        transform: translateX(-25%);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .dropdown-content a {
+        color: white;
+        padding: 20px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {background-color: #3c3c3ccc;}
 
-         
+      .dropdown:hover .dropdown-content {display: block;}
+    </style>
+  
+    <!-- Nav Bar -->
+    <nav
+        style="
+          display: flex;
+          background: linear-gradient(
+            90.17deg,
+            #ffffffdd 0%,
+            #526576dd 60%,
+            #1e2327dd 100%
+          );
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          backdrop-filter: blur(3px);
+        "
+        class="sm:h-20 h-16 px-5 z-[100] bg-white top-0 left-0 right-0 shadow-lg w-full"
+      >
+        <!-- Logo -->
+        <a href="/">
+          <div class="pt-2 h-full flex flex-col">
+            <div class="text-right">
+              <img
+                src="{% static "files/image.png" %}"
+                style="margin-left: 17.33%; width: 150px; margin-top: -6px"
+                alt=""
+              />
+            </div>
+          </div>
+        </a>
+        <!-- End of logo -->
+        <!-- NavBar Mid -->
+        <!-- End of NavBar Mid -->
+        <!-- Nav Right -->
+  
+        <div class="main-front-btndiv">
+            <a href="https://dashboard.multilipi.com/doctunes/login" class="login-btn-trans">
+              <span>Login</span>
+            </a>
+            <a href="https://dashboard.multilipi.com/doctunes/signup" class="try-btn-trans">
+              <span style="color: white;">Try now</span>
+            </a>
+        </div>
+  
+        <!-- End of Nav Right -->
+    </nav>
+    <!-- End of Navbar -->
+    
+    {% block content %}
 
-        </nav>
+    {% endblock content %}
 
-            {% block content %}
+    <div class="">
+        <div
+          class=""
+          id=""
+          style="position: relative; height: fit-content; width: 100%"
+        >
+          <div style="left: 2%;
+                    width: 18%;
+                    top: 4%;
+                    position: absolute;
+                    height: fit-content;
+                    z-index: 2;
+            "><a href="/">
+                <div class="pt-2 h-full flex flex-col">
+                  <div class="text-right" style="height: 100%; width: 100%;">
+                    <img src="{% static "files/image.png" %}">
+                  </div>
+                </div>
+              </a>
+          </div>
+          <div class="multilipi-produ-1-46740 pos-abs" id="id-5974">
+            <span class="multilipi-produ-1-46740-0">MultiLipi Products</span>
+          </div>
+          <div class="industries-1-111384 pos-abs" id="id-5975">
+            <span class="industries-1-111384-0">Industries</span>
+          </div>
+          <div class="knowledge-base-1-462280 pos-abs" id="id-5976">
+            <span class="knowledge-base-1-462280-0">Knowledge base</span>
+          </div>
+          <div class="policy-1-120523 pos-abs" id="id-5977">
+            <span class="policy-1-120523-0">Policy</span>
+          </div>
+  
+          <div class="website-transla-1-797413 pos-abs" id="id-5978">
+            <span class="website-transla-1-797413-0"
+              ><a href="">Multilingual SEO</a><br /><br /><a href="/Document Translation">Document Translation</a></span
+            >
+          </div>
+          <div class="ecommerce-trans-1-11407 pos-abs" id="id-5979">
+            <span class="ecommerce-trans-1-11407-0"
+              ><a href="/E_commerce">E-commerce Industry</a><br />
+              <br /><a href="/government">Government</a><br />
+              <br /><a href="/edu">Education Industry</a><br /><br />
+              <a href="/banking">Banking Industry</a></span
+            >
+          </div>
+          <div class="about-us-blog-c-1-263376 pos-abs" id="id-5980">
+            <span class="about-us-blog-c-1-263376-0"
+              ><a href="">Blog</a><br /><br /><a href="/#requesting-demo">Contact us</a></span
+            >
+          </div>
+          <div class="terms-and-condi-1-114300 pos-abs" id="id-5981">
+            <span class="terms-and-condi-1-114300-0"
+              ><a href="/terms_and_conditions">Terms and conditions</a><br /><br /><a href="/privacy_policy">Privacy policy</a><br /><br /><a href="/refund_policy">Refund policy</a>
+            </span>
+          </div>
+          <div class="frame-1-188928" id="id-5957">
+            <img style="width: 100%; height: 100%;" src="{% static "files/img-footer.png" %}" alt="" />
+          </div>
+          <div class="logo-1-408593 pos-abs" id="id-5958">
+            <div class="frame-15-1-580692 pos-abs" id="id-5959">
+              <a href="https://www.linkedin.com/company/multilipi-technologies-pvt-ltd/">
+                <div class="group-10-1-202672 pos-abs" id="id-5966">
+                  <div class="ellipse-40-1-55510 pos-abs" id="id-5967">
 
-            {% endblock %}
+                    <div class="eisclinkedin-1-88027 pos-abs" id="id-5968">
+                      <div class="vector-1-102080 pos-abs" id="id-5969">
+                        <div
+                          class="nodeBg-5969 pos-abs pos-init fill-parent bg-contain bg-no-repeat image-div"
+                          id="id-bg-5969"
+                        ></div>
+                      </div>
+                    </div>
 
-       
-    </body>        
-    </html>
+                  </div>
+                </div> 
+              </a>
+              {% comment %} <div class="group-9-1-7425 pos-abs" id="id-5970">
+                <div class="ellipse-41-1-693749 pos-abs" id="id-5971"></div>
+                <div class="uilinstagram-1-344960 pos-abs" id="id-5972">
+                  <div class="vector-1-845728 pos-abs" id="id-5973">
+                    <div
+                      class="nodeBg-5973 pos-abs pos-init fill-parent bg-contain bg-no-repeat image-div"
+                      id="id-bg-5973"
+                    ></div>
+                  </div>
+                </div>
+              </div> {% endcomment %}
+            </div>
+          </div>
+        </div>
+    </div>
+    </script>
+    <script src="{% static "js/scripts.js" %}"></script>
+    <script>
+      var TxtType = function (el, toRotate, period, loopdur) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.loopdur = loopdur - 1;
+        this.period = parseInt(period, 10) || 1000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML =
+          '<span style="border-right: 0.08em solid #48aef3ff; background: linear-gradient(90deg, #4870ff33 0%, #48b2ff0d 100%);" class="wrap">' +
+          this.txt +
+          "</span>";
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          if (this.loopNum === this.loopdur) {
+            console.log(this.toRotate.length - 1);
+            return; // Stop after completing all elements in toRotate
+          }
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      };
+
+      function textAnimation(id) {
+        var elements = document.getElementById(id);
+        // for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements.getAttribute("data-type");
+        var period = elements.getAttribute("data-period");
+        var loopdur = elements.getAttribute("loopdur");
+        if (toRotate) {
+          new TxtType(elements, JSON.parse(toRotate), period, loopdur);
+        }
+        // }
+      }
+      textAnimation("typewrite");
+      // window.onload= function(){
+      //  textAnimation('typewrite')
+      // }
+    </script>
+</body>
+</html>
